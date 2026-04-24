@@ -11,6 +11,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
 body{background:#020617;color:white;overflow-x:hidden}
+
+/* BACKGROUND */
 #bg{position:fixed;top:0;left:0;z-index:-1}
 
 /* NAV */
@@ -29,6 +31,22 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#00f5ff;
+color:black;
+border-radius:8px;
+text-decoration:none;
+transition:0.3s;
+}
+.btn:hover{
+background:#00c4cc;
+transform:scale(1.05);
 }
 
 /* CURSOR */
@@ -66,25 +84,42 @@ text-align:center;
 .timeline{border-left:2px solid #00f5ff;padding-left:20px}
 .timeline div{margin-bottom:20px}
 
-/* CHATBOT */
+/* SEARCH BAR */
 .chatbot{
 position:fixed;
 top:80px;
 left:50%;
 transform:translateX(-50%);
-width:500px;
+width:520px;
 background:#0f172a;
 padding:15px;
 border-radius:20px;
 box-shadow:0 0 25px #00f5ff;
 z-index:1000;
 }
-
 .chat-row{display:flex}
-.chatbot input{flex:1;padding:12px;border:none;border-radius:10px}
-.chatbot button{padding:12px;background:#00f5ff;border:none;border-radius:10px}
-
-.chat-history{margin-top:10px;max-height:120px;overflow-y:auto;font-size:14px}
+.chatbot input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+.chatbot button{
+margin-left:5px;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#00f5ff;
+cursor:pointer;
+}
+.chat-history{
+margin-top:10px;
+max-height:120px;
+overflow-y:auto;
+font-size:14px;
+text-align:left;
+}
 </style>
 </head>
 
@@ -97,7 +132,7 @@ z-index:1000;
 <h2>Rohit</h2>
 </nav>
 
-<!-- SEARCH BAR -->
+<!-- SEARCH / CHAT -->
 <div class="chatbot">
 <div class="chat-row">
 <input id="msg" placeholder="Ask about my skills, projects, internships..." onkeydown="if(event.key==='Enter') askAI()">
@@ -110,30 +145,25 @@ z-index:1000;
 <section class="hero">
 <h1>Hi, I'm Rohit Saha</h1>
 <p>B.Tech CSE (AIML) | Aspiring Web Developer</p>
+
+<div style="margin-top:20px;">
+<a href="Rohit_Saha_Resume.pdf" target="_blank" class="btn">📄 View Resume</a>
+<a href="Rohit_Saha_Resume.pdf" download class="btn">⬇ Download Resume</a>
+</div>
+
 </section>
 
 <!-- ABOUT -->
 <section class="section">
 <h2>About Me</h2>
-<p>
-I am a 22-year-old B.Tech CSE student specializing in Artificial Intelligence and Machine Learning.
-I am passionate about coding, problem-solving, and building innovative software solutions.
-</p>
-</section>
-
-<!-- CAREER -->
-<section class="section">
-<h2>Career Objective</h2>
-<p>
-To become a skilled software engineer and contribute to real-world projects by leveraging modern technologies and development practices.
-</p>
+<p>I am a 2nd-year B.Tech CSE (AIML) student passionate about development, machine learning, and building real-world applications.</p>
 </section>
 
 <!-- EDUCATION -->
 <section class="section">
 <h2>Education</h2>
 <div class="timeline">
-<div><b>B.Tech CSE (AIML)</b> – Manav Rachna University (2nd Year)</div>
+<div><b>B.Tech CSE (AIML)</b> – Manav Rachna University</div>
 <div><b>12th</b> – Science Stream</div>
 <div><b>10th</b> – Completed</div>
 </div>
@@ -141,83 +171,27 @@ To become a skilled software engineer and contribute to real-world projects by l
 
 <!-- SKILLS -->
 <section class="section">
-<h2>Technical Skills</h2>
+<h2>Skills</h2>
 Java<div class="bar"><div class="progress" data-width="80%"></div></div>
 Python<div class="bar"><div class="progress" data-width="85%"></div></div>
 Kotlin<div class="bar"><div class="progress" data-width="75%"></div></div>
 C++<div class="bar"><div class="progress" data-width="70%"></div></div>
 </section>
 
-<!-- STRENGTHS -->
+<!-- PROJECTS -->
 <section class="section">
-<h2>Technical Strengths</h2>
-<ul>
-<li>Strong analytical and problem-solving skills</li>
-<li>Good understanding of programming fundamentals</li>
-<li>Teamwork and collaboration</li>
-<li>Quick adaptability to new technologies</li>
-</ul>
+<h2>Projects</h2>
+<p><b>Network Intrusion Detection System</b> – ML-based cybersecurity project</p>
+<p><b>Weather Change Detector</b> – Data-based weather analysis system</p>
 </section>
 
 <!-- EXPERIENCE -->
 <section class="section">
 <h2>Experience</h2>
 <div class="timeline">
-<div>
-<b>Kubota Internship</b><br>
-Worked in industrial environment gaining practical exposure.
+<div>Kubota Internship</div>
+<div>Blind School Internship</div>
 </div>
-
-<div>
-<b>Blind School Internship</b><br>
-Participated in social service activities and support programs.
-</div>
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section">
-<h2>Projects</h2>
-
-<h3>Network Intrusion Detection System</h3>
-<p>
-A machine learning-based system that detects malicious network activities and enhances cybersecurity.
-</p>
-
-<h3>Weather Change Detector</h3>
-<p>
-A system that analyzes weather patterns and detects environmental changes using data processing.
-</p>
-
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="section">
-<h2>Achievements</h2>
-<ul>
-<li>Runner-up in 2 Hackathons</li>
-<li>Participated in multiple coding competitions</li>
-</ul>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section class="section">
-<h2>Certifications</h2>
-<ul>
-<li>Machine Learning basics certification</li>
-<li>Programming course completion</li>
-</ul>
-</section>
-
-<!-- HOBBIES -->
-<section class="section">
-<h2>Hobbies</h2>
-<ul>
-<li>Coding</li>
-<li>Football</li>
-<li>Music</li>
-<li>Bike Riding</li>
-</ul>
 </section>
 
 <!-- CONTACT -->
@@ -228,7 +202,7 @@ A system that analyzes weather patterns and detects environmental changes using 
 </section>
 
 <script>
-/* BG */
+/* THREE BG */
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
 const renderer=new THREE.WebGLRenderer({canvas:bg});
@@ -258,15 +232,17 @@ cursor.style.left=e.clientX+"px";
 cursor.style.top=e.clientY+"px";
 });
 
-/* SKILLS */
+/* SKILL ANIMATION */
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
-if(e.isIntersecting){e.target.style.width=e.target.dataset.width;}
+if(e.isIntersecting){
+e.target.style.width=e.target.dataset.width;
+}
 });
 });
 document.querySelectorAll(".progress").forEach(el=>obs.observe(el));
 
-/* CHAT */
+/* CHATBOT */
 function askAI(){
 let input=document.getElementById("msg").value.toLowerCase();
 let res="";
@@ -280,6 +256,7 @@ else res="Ask about skills, projects, internships.";
 let history=document.getElementById("chatHistory");
 history.innerHTML += `<div><b>You:</b> ${input}</div>`;
 history.innerHTML += `<div><b>AI:</b> ${res}</div>`;
+
 document.getElementById("msg").value="";
 }
 </script>
