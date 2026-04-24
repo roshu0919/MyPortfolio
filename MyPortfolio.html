@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Saha | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:#020617;color:white;overflow-x:hidden}
+#bg{position:fixed;top:0;left:0;z-index:-1}
+
+/* NAV */
+nav{
+display:flex;justify-content:space-between;
+padding:15px 40px;
+position:fixed;width:100%;
+background:rgba(0,0,0,0.6);
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/* CURSOR */
+.cursor{
+position:fixed;
+width:20px;height:20px;
+border-radius:50%;
+background:#00f5ff;
+pointer-events:none;
+mix-blend-mode:screen;
+}
+
+/* SECTION */
+.section{padding:100px 10%}
+
+/* DASHBOARD */
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+.box{
+background:#0f172a;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #00f5ff;
+text-align:center;
+}
+
+/* SKILLS */
+.bar{background:#1e293b;height:8px;border-radius:5px}
+.progress{height:8px;width:0;background:#00f5ff;transition:2s}
+
+/* TIMELINE */
+.timeline{border-left:2px solid #00f5ff;padding-left:20px}
+.timeline div{margin-bottom:20px}
+
+/* CHATBOT */
+.chatbot{
+position:fixed;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+width:500px;
+background:#0f172a;
+padding:15px;
+border-radius:20px;
+box-shadow:0 0 25px #00f5ff;
+z-index:1000;
+}
+
+.chat-row{display:flex}
+.chatbot input{flex:1;padding:12px;border:none;border-radius:10px}
+.chatbot button{padding:12px;background:#00f5ff;border:none;border-radius:10px}
+
+.chat-history{margin-top:10px;max-height:120px;overflow-y:auto;font-size:14px}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+<div class="cursor" id="cursor"></div>
+
+<nav>
+<h2>Rohit</h2>
+</nav>
+
+<!-- SEARCH BAR -->
+<div class="chatbot">
+<div class="chat-row">
+<input id="msg" placeholder="Ask about my skills, projects, internships..." onkeydown="if(event.key==='Enter') askAI()">
+<button onclick="askAI()">Search</button>
+</div>
+<div id="chatHistory" class="chat-history"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Hi, I'm Rohit Saha</h1>
+<p>B.Tech CSE (AIML) | Aspiring Web Developer</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+<h2>About Me</h2>
+<p>
+I am a 22-year-old B.Tech CSE student specializing in Artificial Intelligence and Machine Learning.
+I am passionate about coding, problem-solving, and building innovative software solutions.
+</p>
+</section>
+
+<!-- CAREER -->
+<section class="section">
+<h2>Career Objective</h2>
+<p>
+To become a skilled software engineer and contribute to real-world projects by leveraging modern technologies and development practices.
+</p>
+</section>
+
+<!-- EDUCATION -->
+<section class="section">
+<h2>Education</h2>
+<div class="timeline">
+<div><b>B.Tech CSE (AIML)</b> – Manav Rachna University (2nd Year)</div>
+<div><b>12th</b> – Science Stream</div>
+<div><b>10th</b> – Completed</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+<h2>Technical Skills</h2>
+Java<div class="bar"><div class="progress" data-width="80%"></div></div>
+Python<div class="bar"><div class="progress" data-width="85%"></div></div>
+Kotlin<div class="bar"><div class="progress" data-width="75%"></div></div>
+C++<div class="bar"><div class="progress" data-width="70%"></div></div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="section">
+<h2>Technical Strengths</h2>
+<ul>
+<li>Strong analytical and problem-solving skills</li>
+<li>Good understanding of programming fundamentals</li>
+<li>Teamwork and collaboration</li>
+<li>Quick adaptability to new technologies</li>
+</ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section">
+<h2>Experience</h2>
+<div class="timeline">
+<div>
+<b>Kubota Internship</b><br>
+Worked in industrial environment gaining practical exposure.
+</div>
+
+<div>
+<b>Blind School Internship</b><br>
+Participated in social service activities and support programs.
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+<h2>Projects</h2>
+
+<h3>Network Intrusion Detection System</h3>
+<p>
+A machine learning-based system that detects malicious network activities and enhances cybersecurity.
+</p>
+
+<h3>Weather Change Detector</h3>
+<p>
+A system that analyzes weather patterns and detects environmental changes using data processing.
+</p>
+
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section">
+<h2>Achievements</h2>
+<ul>
+<li>Runner-up in 2 Hackathons</li>
+<li>Participated in multiple coding competitions</li>
+</ul>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section">
+<h2>Certifications</h2>
+<ul>
+<li>Machine Learning basics certification</li>
+<li>Programming course completion</li>
+</ul>
+</section>
+
+<!-- HOBBIES -->
+<section class="section">
+<h2>Hobbies</h2>
+<ul>
+<li>Coding</li>
+<li>Football</li>
+<li>Music</li>
+<li>Bike Riding</li>
+</ul>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+<h2>Contact</h2>
+<p>Email: saharohit823@gmail.com</p>
+<p>Phone: 9315368952</p>
+</section>
+
+<script>
+/* BG */
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas:bg});
+renderer.setSize(innerWidth,innerHeight);
+
+const geometry=new THREE.BufferGeometry();
+const vertices=[];
+for(let i=0;i<5000;i++) vertices.push(Math.random()*2000-1000);
+geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+
+const material=new THREE.PointsMaterial({color:0x00f5ff});
+const points=new THREE.Points(geometry,material);
+scene.add(points);
+camera.position.z=500;
+
+function animate(){
+requestAnimationFrame(animate);
+points.rotation.x+=0.0005;
+points.rotation.y+=0.001;
+renderer.render(scene,camera);
+}
+animate();
+
+/* CURSOR */
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+/* SKILLS */
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.style.width=e.target.dataset.width;}
+});
+});
+document.querySelectorAll(".progress").forEach(el=>obs.observe(el));
+
+/* CHAT */
+function askAI(){
+let input=document.getElementById("msg").value.toLowerCase();
+let res="";
+
+if(input.includes("skill")) res="I know Java, Python, Kotlin, C++ and ML.";
+else if(input.includes("project")) res="I built intrusion detection and weather systems.";
+else if(input.includes("internship")) res="I worked at Kubota and a Blind School.";
+else if(input.includes("goal")) res="To become a web developer.";
+else res="Ask about skills, projects, internships.";
+
+let history=document.getElementById("chatHistory");
+history.innerHTML += `<div><b>You:</b> ${input}</div>`;
+history.innerHTML += `<div><b>AI:</b> ${res}</div>`;
+document.getElementById("msg").value="";
+}
+</script>
+
+</body>
+</html>
