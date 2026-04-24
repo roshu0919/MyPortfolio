@@ -201,34 +201,58 @@ My focus is on improving network security through intelligent data-driven models
 </section>
 
 <script>
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
-const renderer=new THREE.WebGLRenderer({canvas:bg});
-renderer.setSize(innerWidth,innerHeight);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: bg, alpha:true });
+renderer.setSize(innerWidth, innerHeight);
 
-const geometry=new THREE.BufferGeometry();
-const vertices=[];
-for(let i=0;i<5000;i++) vertices.push(Math.random()*2000-1000);
-geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+/* GRID (Gaming Floor) */
+const grid = new THREE.GridHelper(2000, 50, 0x00f5ff, 0x00f5ff);
+grid.position.y = -200;
+scene.add(grid);
 
-const material=new THREE.PointsMaterial({color:0x00f5ff});
-const points=new THREE.Points(geometry,material);
-scene.add(points);
-camera.position.z=500;
+/* STARS */
+const starGeometry = new THREE.BufferGeometry();
+const starVertices = [];
 
-function animate(){
-requestAnimationFrame(animate);
-points.rotation.y+=0.001;
-renderer.render(scene,camera);
+for (let i = 0; i < 6000; i++) {
+    starVertices.push(
+        Math.random() * 2000 - 1000,
+        Math.random() * 2000 - 1000,
+        Math.random() * 2000 - 1000
+    );
 }
+
+starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+
+const starMaterial = new THREE.PointsMaterial({
+    color: 0x00f5ff,
+    size: 2
+});
+
+const stars = new THREE.Points(starGeometry, starMaterial);
+scene.add(stars);
+
+camera.position.z = 500;
+
+/* ANIMATION */
+function animate(){
+    requestAnimationFrame(animate);
+
+    stars.rotation.y += 0.0008;
+    grid.rotation.z += 0.0005;
+
+    renderer.render(scene, camera);
+}
+
 animate();
 
-const obs=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){e.target.style.width=e.target.dataset.width;}
+/* RESPONSIVE */
+window.addEventListener("resize", ()=>{
+    renderer.setSize(innerWidth, innerHeight);
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
 });
-});
-document.querySelectorAll(".progress").forEach(el=>obs.observe(el));
 </script>
 
 </body>
