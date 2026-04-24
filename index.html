@@ -10,40 +10,27 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-body{background:#020617;color:white;overflow-x:hidden}
+body{background:#020617;color:white}
 #bg{position:fixed;top:0;left:0;z-index:-1}
 
-nav{display:flex;justify-content:space-between;padding:15px 40px;position:fixed;width:100%;background:rgba(0,0,0,0.6)}
+nav{padding:15px 40px;position:fixed;width:100%;background:rgba(0,0,0,0.6)}
 
 .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 
 .section{padding:100px 10%}
 h2{color:#00f5ff;margin-bottom:20px}
 
-.btn{padding:10px 18px;background:#00f5ff;color:black;border-radius:8px;text-decoration:none;margin:5px;display:inline-block}
+.btn{padding:10px 18px;background:#00f5ff;color:black;border-radius:8px;text-decoration:none;margin:5px}
 
 .bar{background:#1e293b;height:8px;border-radius:5px}
 .progress{height:8px;width:0;background:#00f5ff;transition:2s}
 
 .timeline{border-left:2px solid #00f5ff;padding-left:20px}
 
-.chatbot{position:fixed;top:80px;left:50%;transform:translateX(-50%);width:520px;background:#0f172a;padding:15px;border-radius:20px}
-
 ul{margin-left:20px}
 
-/* FORM */
 form input, form textarea{
-    width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:none;
-    margin-bottom:10px;
-    background:#0f172a;
-    color:white;
-}
-
-form input:focus, form textarea:focus{
-    outline:2px solid #00f5ff;
+width:100%;padding:12px;margin-bottom:10px;background:#0f172a;color:white;border:none;border-radius:8px;
 }
 </style>
 </head>
@@ -54,44 +41,64 @@ form input:focus, form textarea:focus{
 
 <nav><h2>Rohit Saha</h2></nav>
 
-<!-- SEARCH -->
-<div class="chatbot">
-<input id="msg" placeholder="Ask about my skills, projects..." onkeydown="if(event.key==='Enter') askAI()">
-<button onclick="askAI()">Search</button>
-<p id="chat"></p>
-</div>
-
 <!-- HERO -->
 <section class="hero">
 <h1>Hi, I'm Rohit Saha</h1>
 <p>B.Tech CSE (AIML) | Developer | ML Enthusiast</p>
 
-<a href="Rohit_Saha_Resume.pdf" target="_blank" class="btn">📄 View Resume</a>
-<a href="Rohit_Saha_Resume.pdf" download class="btn">⬇ Download Resume</a>
+<a href="Rohit_Saha_Resume.pdf" target="_blank" class="btn">View Resume</a>
+<a href="Rohit_Saha_Resume.pdf" download class="btn">Download Resume</a>
 </section>
 
 <!-- ABOUT -->
 <section class="section">
 <h2>About Me</h2>
-<p>I am a passionate Computer Science student specializing in AI & ML, focused on building real-world solutions.</p>
+<p>
+I am a dedicated Computer Science student specializing in Artificial Intelligence and Machine Learning. 
+I have a strong interest in building software applications, solving real-world problems, and continuously improving my technical skills.
+I enjoy working on projects that combine programming with practical implementation.
+</p>
 </section>
 
 <!-- SKILLS -->
 <section class="section">
 <h2>Technical Skills</h2>
 
-<p><b>Java:</b> OOP, backend logic</p>
+<p><b>Java:</b> Strong understanding of object-oriented programming, backend logic development, and application structure.</p>
 <div class="bar"><div class="progress" data-width="80%"></div></div>
 
-<p><b>Python:</b> ML & data handling</p>
+<p><b>Python:</b> Used for machine learning, data processing, and building intelligent systems.</p>
 <div class="bar"><div class="progress" data-width="85%"></div></div>
 
-<p><b>Kotlin:</b> Android apps</p>
+<p><b>Kotlin:</b> Android application development and UI-based projects.</p>
 <div class="bar"><div class="progress" data-width="75%"></div></div>
 
-<p><b>C++:</b> DSA basics</p>
+<p><b>C++:</b> Problem solving, algorithms, and data structures basics.</p>
 <div class="bar"><div class="progress" data-width="70%"></div></div>
 
+</section>
+
+<!-- COURSEWORK -->
+<section class="section">
+<h2>Relevant Coursework</h2>
+<ul>
+<li>Data Structures and Algorithms</li>
+<li>Object-Oriented Programming</li>
+<li>Database Management Systems</li>
+<li>Artificial Intelligence Basics</li>
+<li>Software Engineering</li>
+</ul>
+</section>
+
+<!-- TOOLS -->
+<section class="section">
+<h2>Tools & Technologies</h2>
+<ul>
+<li>VS Code</li>
+<li>Android Studio</li>
+<li>Git & GitHub</li>
+<li>Machine Learning Libraries</li>
+</ul>
 </section>
 
 <!-- EXPERIENCE -->
@@ -102,17 +109,18 @@ form input:focus, form textarea:focus{
 <div>
 <b>Kubota Internship</b>
 <ul>
-<li>Industrial exposure</li>
-<li>Teamwork</li>
-<li>Technical workflow</li>
+<li>Worked in a real industrial environment</li>
+<li>Observed technical workflows and processes</li>
+<li>Improved teamwork and communication skills</li>
 </ul>
 </div>
 
 <div>
 <b>Blind School Internship</b>
 <ul>
-<li>Social service</li>
-<li>Educational support</li>
+<li>Participated in social service activities</li>
+<li>Helped in educational programs</li>
+<li>Developed empathy and communication</li>
 </ul>
 </div>
 
@@ -123,37 +131,71 @@ form input:focus, form textarea:focus{
 <section class="section">
 <h2>Projects</h2>
 
-<h3>Network Intrusion Detection</h3>
+<h3>Network Intrusion Detection System</h3>
 <ul>
-<li>ML-based threat detection</li>
-<li>Cybersecurity focus</li>
+<li><b>Problem:</b> Increasing cybersecurity threats</li>
+<li><b>Solution:</b> ML-based detection system</li>
+<li><b>Tech:</b> Python, Machine Learning</li>
+<li><b>Outcome:</b> Improved detection of suspicious activity</li>
+<li><b>Future Scope:</b> Real-time system deployment</li>
 </ul>
 
 <h3>Weather Change Detector</h3>
 <ul>
-<li>Weather data analysis</li>
-<li>Pattern detection</li>
+<li><b>Problem:</b> Unpredictable weather patterns</li>
+<li><b>Solution:</b> Data-based analysis</li>
+<li><b>Tech:</b> Python</li>
+<li><b>Outcome:</b> Better understanding of weather trends</li>
+<li><b>Future Scope:</b> Integration with APIs</li>
 </ul>
 
 </section>
 
-<!-- CONTACT FORM -->
+<!-- RESEARCH -->
+<section class="section">
+<h2>Mini Research Interest</h2>
+<p>
+I am interested in cybersecurity and anomaly detection using machine learning.
+My focus is on improving network security through intelligent data-driven models.
+</p>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section">
+<h2>Achievements</h2>
+<ul>
+<li>Runner-up in 2 Hackathons</li>
+<li>Participated in coding competitions</li>
+<li>Completed internships successfully</li>
+<li>Built multiple academic projects</li>
+</ul>
+</section>
+
+<!-- STRENGTHS -->
+<section class="section">
+<h2>Strengths</h2>
+<ul>
+<li>Strong problem-solving ability</li>
+<li>Quick learner</li>
+<li>Team collaboration</li>
+<li>Consistency and discipline</li>
+</ul>
+</section>
+
+<!-- CONTACT -->
 <section class="section">
 <h2>Contact Me</h2>
 
 <form action="https://formsubmit.co/saharohit823@gmail.com" method="POST">
-
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
 <input type="tel" name="phone" placeholder="Your Phone Number" required>
+<textarea name="message" placeholder="Your Query..." rows="5" required></textarea>
 
-<textarea name="message" placeholder="Write your query..." rows="5" required></textarea>
-
-<input type="hidden" name="_subject" value="New Portfolio Query!">
+<input type="hidden" name="_subject" value="Portfolio Query">
 <input type="hidden" name="_captcha" value="false">
 
-<button type="submit" class="btn">Send Message</button>
-
+<button class="btn">Send Message</button>
 </form>
 
 </section>
@@ -187,12 +229,6 @@ if(e.isIntersecting){e.target.style.width=e.target.dataset.width;}
 });
 });
 document.querySelectorAll(".progress").forEach(el=>obs.observe(el));
-
-function askAI(){
-let input=document.getElementById("msg").value.toLowerCase();
-let res="Ask about skills, projects, internships!";
-document.getElementById("chat").innerText=res;
-}
 </script>
 
 </body>
